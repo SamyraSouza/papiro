@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fragments of Time - Tradução</title>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+<style>
+  :root { --bg:#0d0c0a; --ink:#f1e9d8; --muted:#b9ae98; --line:#3a352b; }
+  html,body { margin:0; height:100%; background:var(--bg); color:var(--ink); font-family:Georgia,serif; }
+  main { display:flex; flex-direction:column; height:100%; }
+  header { padding:16px; text-align:center; }
+  h1 { margin:0; font-size:1.3rem; letter-spacing:.08em; font-weight:normal; }
+  p { margin:6px 0 0; color:var(--muted); font-size:.9rem; }
+  model-viewer { flex:1; width:100%; --poster-color:transparent; background:radial-gradient(circle at 50% 40%, #2a2419, var(--bg) 70%); }
+  .ar { position:absolute; left:50%; bottom:24px; transform:translateX(-50%); padding:14px 28px; border:1px solid var(--ink); background:rgba(13,12,10,.85); color:var(--ink); font:inherit; letter-spacing:.1em; border-radius:2px; }
+  #aviso { display:none; padding:10px 16px; text-align:center; color:var(--muted); font-size:.85rem; border-top:1px solid var(--line); }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>TRADUÇÃO DO PAPIRO</h1>
+    <p>A máquina de tradução decifrou os hieróglifos. Toque em "Ver no meu espaço" e aponte o celular para o chão.</p>
+  </header>
+  <model-viewer id="mv" src="papiro_ar.glb" alt="Papiro traduzido de Fragments of Time"
+    ar ar-modes="webxr scene-viewer quick-look" ar-scale="auto" camera-controls
+    autoplay shadow-intensity="1" exposure="1.1" interaction-prompt="none">
+    <button slot="ar-button" class="ar">VER NO MEU ESPAÇO</button>
+  </model-viewer>
+  <div id="aviso">Seu aparelho não abriu a AR. Use o Chrome no Android ou o Safari no iPhone, com a página em https.</div>
+</main>
+<script>
+  var mv = document.getElementById('mv');
+  mv.addEventListener('load', function () {
+    if (!mv.canActivateAR) document.getElementById('aviso').style.display = 'block';
+  });
+</script>
+</body>
+</html>
