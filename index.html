@@ -13,16 +13,12 @@
   h1 { margin:0; font-size:1.3rem; letter-spacing:.08em; font-weight:normal; }
   p { margin:6px 0 0; color:var(--muted); font-size:.9rem; }
   model-viewer { flex:1; width:100%; --poster-color:transparent; background:radial-gradient(circle at 50% 40%, #2a2419, var(--bg) 70%); }
-  .ar { position:absolute; left:50%; bottom:24px; transform:translateX(-50%); padding:14px 28px; border:1px solid var(--ink); background:rgba(13,12,10,.85); color:var(--ink); font:inherit; letter-spacing:.1em; border-radius:2px; }
+  .ar { position:absolute; left:50%; bottom:20px; transform:translateX(-50%); padding:8px 16px; border:1px solid var(--ink); background:rgba(13,12,10,.85); color:var(--ink); font:inherit; font-size:.75rem; letter-spacing:.08em; border-radius:2px; }
   #aviso { display:none; padding:10px 16px; text-align:center; color:var(--muted); font-size:.85rem; border-top:1px solid var(--line); }
 </style>
 </head>
 <body>
 <main>
-  <header>
-    <h1>TRADUÇÃO DO PAPIRO</h1>
-    <p>A máquina de tradução decifrou os hieróglifos. Toque em "Ver no meu espaço" e aponte o celular para o chão.</p>
-  </header>
   <model-viewer id="mv" src="papiro_ar.glb" alt="Papiro traduzido de Fragments of Time"
     ar ar-modes="webxr scene-viewer quick-look" ar-scale="auto" camera-controls
     autoplay shadow-intensity="1" exposure="1.1" interaction-prompt="none">
